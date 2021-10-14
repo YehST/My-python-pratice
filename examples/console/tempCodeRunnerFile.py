@@ -1,0 +1,1 @@
+ul.a_input_mode(board_num,AnalogInputMode)

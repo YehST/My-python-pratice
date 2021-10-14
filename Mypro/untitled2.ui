@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>543</width>
+    <height>598</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="catchbutton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>100</y>
+      <width>121</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>擷取</string>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>3000</number>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="locatebutton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>200</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>定位</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locate">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string notr="true">定位座標</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locate_x_value">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locate_x">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">X軸：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locate_y">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>140</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">Ｙ軸：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locate_y_value">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>140</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="now">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string notr="true">當前座標</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="now_y_value">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>240</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="now_x_value">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>240</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="now_x">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">X軸：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="now_y">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>240</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">Ｙ軸：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mistake">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>58</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string notr="true">誤差</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mistake_x">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">X軸：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mistake_y_value">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>340</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mistake_x_value">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>340</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mistake_y">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>340</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">Ｙ軸：</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servobutton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>300</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>校正</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_x_CW">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>420</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>xCW</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_y_CW">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>480</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>yCW</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_x_CCW">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>420</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>xCCW</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_y_CCW">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>480</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>yCCW</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_x_STOP">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>420</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>xSTOP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="servo_y_STOP">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>480</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ySTOP</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="AutoMode">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>98</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AutoMode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="ManualMode">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>121</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ManualMode</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>501</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="descriptionlayout"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>543</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>關於</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="addWinAction">
+   <property name="text">
+    <string>關於</string>
+   </property>
+   <property name="toolTip">
+    <string>關於</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

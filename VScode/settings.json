@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "C:\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Python 3.9\\python.exe",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+}
