@@ -45,7 +45,9 @@ class Act_Func:
         return np.array(x > 0, dtype=np.int)
 
     def sigmoid(x):
-        return 1/(1+np.exp(-x))
+        #x = np.float64(x)
+        # return 1/(1+np.exp(-x))
+        return .5 * (1 + np.tanh(.5 * x))
 
     def sigmoid_grad(x):
         return (1.0 - Act_Func.sigmoid(x)) * Act_Func.sigmoid(x)

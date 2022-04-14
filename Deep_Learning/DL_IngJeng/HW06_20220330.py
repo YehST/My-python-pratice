@@ -18,7 +18,7 @@ def get_data(flatten=False, normalize=False, one_hot_label=False):
 
 
 def init_network():
-    with open(r"D:\vscode\python\Deep_Learning\DL_From_scrach\ReferenceData\ch03\sample_weight.pkl", 'rb') as f:
+    with open(r"python\Deep_Learning\DL_From_scrach\ReferenceData\ch03\sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
     return network
 
@@ -37,49 +37,68 @@ def predict(network, x):
     return y
 
 
-def main():
-    x_test, L_test, x_train, L_train = get_data(
-        flatten=False, normalize=False, one_hot_label=False)
-    print('\nx Train：', np.shape(x_train))
-    print('Label Train：', np.shape(L_train))
-    print('x Test：', np.shape(x_test))
-    print('Label Test：', np.shape(L_test))
+def printM(M):
+    rows = M.shape[0]
+    cols = M.shape[1]
+    for i in range(0, rows):
+        str1 = ""
+        for j in range(0, cols):
+            str1 += ("%3.0f " % M[i, j])
+        print(str1)
+    print("")
 
+
+def main():
     x = random.randint(0, 9999)
-    img = x_train[x]
-    label = L_train[x]
-    print('\nImage shape', img.shape)
-    img = img.reshape(28, 28)
-    img_show(img)
+    print('\033[1mThe %d data of mnist dataset\033[0m' % x)
+    for i in range(2):
+        for j in range(2):
+            x_test, L_test, x_train, L_train = get_data(
+                flatten=i == 1, normalize=j == 1)
+            print('\n\033[1m*flatten=%s, normalize=%s\033[0m' %
+                  (i == 1, j == 1))
+            print(' Train Img：', np.shape(x_train))
+            print(' Test  Img：', np.shape(x_test))
+            print(' Train Label：', np.shape(L_train))
+            print(' Test  Label：', np.shape(L_test))
+
+            img = x_test[x]
+            img = img.reshape(28, 28)
+            # printM(img)
+            img_show(img)
 
 
 def main3():
-    x_test, L_test, x_train, L_train = get_data(
-        flatten=False, normalize=False, one_hot_label=False)
     network = init_network()
-    x = random.randint(0, 9999)
-    # x = input('0~9999')
-    print('The', x, 'data of test')
-    img = x_test[x]
-    Label = L_test[x]
-    y = predict(network, x_test[x].flatten())
-    print(y)
-    print(Label)
-    y = np.argmax(y)
-    Label = np.argmax(Label)
-    '''
-    print('Label：%d\nPredict：%d' % (Label, y))
-    if Label == y:
-        print('Correct！')
-    else:
-        print('Mistake')
-    print('\nImage shape', img.shape)
-    img = img.reshape(28, 28)
-    img_show(img)
-    '''
+    x = int(input('Please choose a 0~9999 number:'))
+    print('\033[1mThe %d data of test data\033[0m' % x)
+
+    for i in range(2):
+        for j in range(2):
+            for k in range(2):
+                x_test, L_test, x_train, L_train = get_data(
+                    flatten=i == 1, normalize=j == 1, one_hot_label=k == 1)
+                print('\n\033[1m*flatten=%s, normalize=%s, one_hot_label=%s\033[0m' %
+                      (i == 1, j == 1, k == 1))
+
+                img = x_test[x]
+                Label = L_test[x]
+                y = predict(network, x_test[x].flatten())
+                y = np.argmax(y)
+                if k == 1:
+                    print(' original label:', Label)
+                    Label = np.argmax(Label)
+                    print(' transfered label:', Label)
+
+                print(' Label：%d\n Predict：%d' % (Label, y))
+                if Label == y:
+                    print('\033[1m Correct！\033[0m')
+                else:
+                    print('\033[91m Mistake! \033[0m')
+                img = img.reshape(28, 28)
+                img_show(img)
 
 
-main3()
 # normalize = True ---> 會將灰階值0~255轉換為0~1，造成將圖輸出後會顯示全黑，這是因為原本灰階值越接近255會越白，normalize後變成0~1幾乎為全黑
 # flatten = True ---> 會將陣列資料打成一維，若無此動作，將無法將資料丟入模型中預測
 # one_hot_label ---> 讓label變成10個2進位資料，1的位置即為其資料正確數字
